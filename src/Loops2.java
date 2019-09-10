@@ -6,10 +6,6 @@ public class Loops2 {
         return new String(new char[count]).replace("\0", with);
     }
 
-    public static String repeat(int count) {
-        return repeat(count, "-");
-    }
-
     public static void main(String[] args) {
         Scanner key = new Scanner(System.in);
 
@@ -50,6 +46,7 @@ public class Loops2 {
             sum2 += i;
         }
         System.out.println("The sum of those numbers is: " + sum2);
+        System.out.println();
 
         //print 5 rows: 1,12,123,1234,12345
         String result = "";
@@ -66,6 +63,7 @@ public class Loops2 {
             System.out.println(repeat(i, result2));
             result2 = "";
         }
+        System.out.println();
 
         //print 5 rows: 1,2 3,4 5 6,7 8 9 10
         String result3 = "";
@@ -75,7 +73,6 @@ public class Loops2 {
             if (i == 1 | i == 3 | i == 6 | i == 10) {
                 System.out.println(result3);
                 result3 = "";
-            } else {
             }
         }
         System.out.println();
@@ -94,25 +91,33 @@ public class Loops2 {
             if (i == 1 | i == 3 | i == 6 | i == 10 | i == 15) {
                 System.out.println(result4);
                 result4 = "";
-            } else {
             }
         }
         System.out.println();
 
         //print whether an input number is a palindrome
-        System.out.println(" Please enter a number from 1 to 999: ");
+        System.out.println(" Please enter a positive number and I will tell you if it is a palindrome: ");
         String num5 = key.next();
         int lenNum5 = num5.length();
         for (int i = 0; i < lenNum5; i++) {
             if (num5.charAt(i) != num5.charAt((lenNum5 - (i + 1)))) {
-                System.out.println(num5 + " is not a palindrome");
+                System.out.println(num5 + " is not a palindrome.");
                 break;
             } else if (i == (lenNum5 - 1)) {
-                System.out.println(num5 + " is a palindrome");
+                System.out.println(num5 + " is a palindrome.");
             }
         }
+        System.out.println();
 
         //print the sum of all integers 100-200 that are divisible by 9
+        int sum3 = 0;
+        for(int i = 100; i <= 200; i++){
+            if((i%9)==0){
+                sum3 += i;
+            }
+        }
+        System.out.println("The sum of all integers from 100 to 200 that are divisible by 9 is " + sum3 + ".");
+
 
 
     }
